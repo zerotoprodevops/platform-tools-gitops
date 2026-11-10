@@ -10,8 +10,16 @@ spec:
   project: default
 
   source:
-    repoUrl: 
+    repoUrl: https://github.com/zerotoprodevops/platform-tools-gitops.git
+    targetRevision: main
+    path: 'platform-apps'
+
 
   destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
 
   syncPolicy:
+    automated:
+      prune: true 
+      selfHeal: true
