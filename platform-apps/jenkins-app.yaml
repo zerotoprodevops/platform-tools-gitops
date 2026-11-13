@@ -20,18 +20,6 @@ spec:
           admin:
             password: "admin"
           serviceType: ClusterIP
-          # Override the init container to patch Java security before downloading plugins
-          initContainerCommand: |
-            /bin/sh -c '
-            echo "jdk.certpath.disabledAlgorithms=" >> /etc/java/openjdk/security/java.security
-            echo "jdk.tls.disabledAlgorithms=" >> /etc/java/openjdk/security/java.security
-            /usr/local/bin/install-plugins.sh kubernetes workflow-aggregator git configuration-as-code
-          installPlugins:
-              - kubernetes
-              - workflow-aggregator
-              - git
-              - configuration-as-code
-              - skip-certificate-check
         persistence:
           size: "10Gi"    
 
