@@ -25,6 +25,8 @@ spec:
               - workflow-aggregator
               - git
               - configuration-as-code
+          persistence:
+            size: "10Gi"    
 
   destination:
 
