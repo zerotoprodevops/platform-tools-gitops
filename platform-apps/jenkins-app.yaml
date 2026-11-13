@@ -20,6 +20,9 @@ spec:
           admin:
             password: "admin"
           serviceType: ClusterIP
+          initContainerEnv:
+            - name: JAVA_OPTS
+              value: "-Dcom.sun.net.ssl.checkRevocation=false -Djava.security.properties=/var/jenkins_home/java.security"
           installPlugins:
               - kubernetes
               - workflow-aggregator
