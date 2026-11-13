@@ -11,6 +11,9 @@ spec:
     - ReadWriteOnce
   volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Retain    
+  claimRef:
+    namespace: jenkins
+    name: jenkins-app
   hostPath:
       path: /mnt/data/jenkins
       type: Directory
