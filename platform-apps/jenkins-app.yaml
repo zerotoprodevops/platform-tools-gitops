@@ -5,6 +5,8 @@ kind: Application
 metadata:
   name: jenkins-app
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 
 spec:
   project: default
@@ -15,7 +17,8 @@ spec:
     helm:
       values: |
         controller: 
-          adminPassword: "admin"
+          admin:
+            Password: "admin"
           serviceType: ClusterIP
           installPlugins:
               - kubernetes
