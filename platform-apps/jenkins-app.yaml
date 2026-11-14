@@ -7,6 +7,10 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
+  hostAliases:
+        - ip: "128.24.70.119"
+          hostnames:
+            - "updates.jenkins.io"
   source:
     repoURL: 'https://charts.jenkins.io'
     chart: jenkins
