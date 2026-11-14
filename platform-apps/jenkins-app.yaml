@@ -22,6 +22,7 @@ spec:
           initContainer:                  
             image:
               tag: "2.580.2-lts-jdk21"
+          installPlugins: []   # <--- EXPLICITLY EMPTY: Do not download anything
         persistence:
           size: "10Gi"
   destination:
