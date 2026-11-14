@@ -21,10 +21,10 @@ spec:
             password: "admin"
           serviceType: ClusterIP
           image:
-            tag: "lts-jdk17"
+            tag: "2.580.2-lts-jdk21"
           initContainer:                  
             image:
-              tag: "lts-jdk17"   
+              tag: "2.580.2-lts-jdk21"   
           installPlugins:
             - kubernetes
             - workflow-aggregator
