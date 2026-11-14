@@ -17,6 +17,7 @@ spec:
           admin:
             password: "admin"
           serviceType: ClusterIP
+          jenkinsUrl: "http://jenkins.manab.com"
           image:
             tag: "2.580.2-lts-jdk21"
           initContainer:                  
