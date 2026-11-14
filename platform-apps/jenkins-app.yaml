@@ -30,11 +30,7 @@ spec:
           initContainer:                  
             image:
               tag: "2.580.2-lts-jdk21"   
-          installPlugins:
-            - kubernetes
-            - workflow-aggregator
-            - git
-            - configuration-as-code  
+          
         persistence:
           size: "10Gi"    
 
