@@ -24,7 +24,7 @@ spec:
             - name: JAVA_OPTS
               value: "-Dhudson.model.DownloadService.noSignatureCheck=true"
             - name: JENKINS_UC
-              value: "http://updates.jenkins.io"
+              value: "https://updates.jenkins.io"
           image:
             tag: "2.580.2-lts-jdk21"
           initContainer:                  
