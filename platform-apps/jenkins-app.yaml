@@ -1,13 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
-
 kind: Application
-
 metadata:
   name: jenkins-app
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-
 spec:
   project: default
   source:
@@ -24,23 +21,16 @@ spec:
             tag: "2.580.2-lts-jdk21"
           initContainer:                  
             image:
-              tag: "2.580.2-lts-jdk21"   
-          
+              tag: "2.580.2-lts-jdk21"
         persistence:
-          size: "10Gi"    
-
+          size: "10Gi"
   destination:
-
     server: https://kubernetes.default.svc
     namespace: jenkins
-  
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      - ServerSideApply=true    
-
-
-
+      - ServerSideApply=true
