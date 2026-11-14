@@ -7,10 +7,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
-  hostAliases:
-    - ip: "128.24.70.119"
-      hostnames:
-        - "updates.jenkins.io"
   source:
     repoURL: 'https://charts.jenkins.io'
     chart: jenkins
@@ -26,7 +22,11 @@ spec:
           initContainer:                  
             image:
               tag: "2.580.2-lts-jdk21"
-          installPlugins: []   
+          installPlugins: []
+          hostAliases:                   # <--- THE CORRECT LOCATION
+            - ip: "128.24.70.119"
+              hostnames:
+                - "updates.jenkins.io"
         persistence:
           size: "10Gi"
   destination:
